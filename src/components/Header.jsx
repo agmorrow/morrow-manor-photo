@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Disclosure } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Primary from "../assets/images/primary_logo.png";
 
@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <>
       <div className="relative min-h-full">
-        <Disclosure as="nav" >
+        <Popover as="nav" >
           {({ open, close }) => (
             <>
               <div className="relative z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between py-8">
@@ -82,7 +82,7 @@ export default function Header() {
                 </div>
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="relative inline-flex items-center justify-center  p-2 text-black">
+                  <Popover.Button className="relative inline-flex items-center justify-center  p-2 text-black">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -90,7 +90,7 @@ export default function Header() {
                     ) : (
                       <Bars2Icon className="block h-6 w-6" aria-hidden="true" />
                     )}
-                  </Disclosure.Button>
+                  </Popover.Button>
                 </div>
               </div>
 
@@ -100,7 +100,7 @@ export default function Header() {
                 }`}
                 aria-hidden={!open}
               ></div>
-              <Disclosure.Panel className="relative md:hidden z-50">
+              <Popover.Panel className="relative md:hidden z-50">
                 <div className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 shadow-2xl shadow-gray-900/20">
                   {navigation.map((item) => (
                     <Link
@@ -118,10 +118,10 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-              </Disclosure.Panel>
+              </Popover.Panel>
             </>
           )}
-        </Disclosure>
+        </Popover>
       </div>
     </>
   );
