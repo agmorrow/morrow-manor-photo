@@ -17,12 +17,11 @@ const Home = () => {
     { src: "../src/assets/gallery/IMG_2251.jpg", alt: "Image 15" },
     { src: "../src/assets/gallery/IMG_5738.jpeg", alt: "Image 16" },
     { src: "../src/assets/gallery/IMG_9881.jpg", alt: "Image 17" },
-    { src: "../src/assets/gallery/IMG_0739.jpg", alt: "Image 17" },
   ];
 
   return (
-    <div className="w-full min-h-[500px]">
-      <div className="px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="p-5 md:p-10">
+      <div className="columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 space-y-5 lg:space-y--8">
         {images.map((image, index) => (
           <div key={index} className="relative overflow-hidden">
             <img
